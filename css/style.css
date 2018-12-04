@@ -1,27 +1,38 @@
 body{
+  background-image: url(../imagenes/perro_home.jpg);
+  background-size: 100%;
   box-sizing: border-box;
 }
 header{
-  overflow: hidden;
-   height: 10%;
-  background-color: green;
+
+  height: 15%;
+  background-color: #800080;
+  padding:  1%;
+  border-radius: 1%;
 
 }
 img #header{
-  float: left;
-}
-h1 #header{
-  float: left;
-}
-a #header{
-  float: right;
-}
-section{
-  text-align: center;
 
 }
-button.HD{
- float: right;
+h1 #header{
+
+}
+a .nava{
+  text-align: right;
+  color:black;
+}
+section{
+  text-align: left;
+  margin-left: 10%;
+
+}
+div {
+  text-align: right;
+  margin-top: 0 auto;
+}
+}
+button{
+
  font-family: sans-serif;
  font-size: 15px;
  color: white;

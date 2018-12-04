@@ -1,3 +1,8 @@
+<?php
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -11,50 +16,30 @@
   <body>
     <header class="call-md-12 call-xs-12">
       <img class="nav"  src="" alt="">
-      <a class="nava1"  href="index.php">El nombre</a>
-      <a class="nava"  href="index.php">Inicio</a>
+      <a class="nava1"  href="index.php">Adopt.ar</a>
+      <a class="nava"  href="register.php">Registrate</a>
 
 
     </header>
 
-    <section class="call-md-8 call-xs-12">
+    <section class="call-md-8 call-xs-12" "container">
+      <div class="logueate">
         <h2>Login</h2>
-      <form class="login" action="index.php" method="post">
-        <p>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="" value="">
-        </p>
-        <p>
-          <label for="pass">Contraseña</label>
-          <input id="pass" type="password" name="" value="">
-        </p>
-        <p>
-          <button type="submit" name="button"></button>
-        </p>
-      </form>
-      <h2>O registrate</h2>
-      <form class="register" action="login.php" method="post">
-        <p>
-          <label for="nombre">Nombre y Apellido</label>
-          <input id="nombre" type="text" name="" value="">
-        </p>
-        <p>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="" value="">
-        </p>
-        <p>
-          <label for="edad">Edad</label>
-          <input id="edad" type="text" name="" value="">
-        </p>
-        <p>
-          <label for="pass">Contraseña</label>
-          <input id="pass" type="password" name="" value="">
-        </p>
-        <p class="button">
-          <button type="submit" name="button"></button>
-        </p>
+          <form class="login" "container" action="login.php" method="post">
+            <p>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" value="">
+            </p>
+            <p>
+              <label for="pass">Contraseña</label>
+              <input id="pass" type="password" name="password" value="">
+            </p>
+            <p>
+              <button type="submit" name="button"></button>
+            </p>
+          </form>
+      </div>
 
-      </form>
     </section>
     <footer>
 
