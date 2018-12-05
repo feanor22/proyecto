@@ -1,15 +1,32 @@
 body{
   background-image: url(../imagenes/perro_home.jpg);
-  background-size: 100%;
+  background-size: cover;
   box-sizing: border-box;
 }
 header{
-
+  overflow: hidden;
   height: 15%;
-  background-color: #800080;
+  background-color: rgba(0,180,150,0.5);
   padding:  1%;
   border-radius: 1%;
 
+}
+form{
+  margin-top: 15%;
+}
+legend{
+  font-family: 'Acme', sans-serif;
+  font-size: 40px;
+}
+fieldset{
+  margin-left: 5%;
+  margin-top: 15%;
+  text-align: left;
+}
+fieldset .register{
+  margin-left: 5%;
+  margin-top: 8%;
+  text-align: left;
 }
 img #header{
 
@@ -17,27 +34,52 @@ img #header{
 h1 #header{
 
 }
-a .nava{
-  text-align: right;
+div .nava1{
+  float: left;
+  text-decoration: none;
+  font-family: "Catamaran",sans-serif;
+  font-weight: bold;
   color:black;
+}
+div .nava{
+  float: right;
+  flex-direction: column-reverse;
+  text-decoration: none;
+  color:black;
+  font-family: "Catamaran",sans-serif;
+
+
 }
 section{
   text-align: left;
   margin-left: 10%;
 
 }
+p{
+  text-align: left;
+  font-family: 'Catamaran', sans-serif;
+}
+p .radio{
+  font-weight: bold;
+}
+input{
+  background-color: rgba(0,180,150,0.8);
+  border: rgba(255, 0, 0, 1);
+  font-family: 'Catamaran', sans-serif;
+  color: black;
+}
 div {
   text-align: right;
   margin-top: 0 auto;
 }
-}
 button{
+  font-family: 'Acme', sans-serif;
+  font-size: 10px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: rgba(0,180,150,0.8);
+  color: black;
+  border: rgba(255,0,0,1);
 
- font-family: sans-serif;
- font-size: 15px;
- color: white;
- text-decoration: none;
- background-color: transparent;
- border: none;
- padding: 15px;
+
 }
