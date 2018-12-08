@@ -1,11 +1,20 @@
 <?php
-if ($_POST) {
+require_once("funciones/funcionestp.php");
+$validacionLogin=[];
+$nombreDefault="";
+$emailDefault="";
+$fechaNacDefault="";
+$nacionalidadDefault="";
 
-  require_once("funciones/funcionestp.php");
+if ($_POST) {
   $validacionLogin=validacion();
   if(count($validacionLogin)==0){
-    header ("location:index.php");
-}
+    header ("location:index.php");exit;
+  }
+  $nombreDefault=$_POST["nombre"];
+  $emailDefault=$_POST["email"];
+  $fechaNacDefault=$_POST["fecha-nac"];
+  $nacionalidadDefault=$_POST["nacionalidad"];
 }
  ?>
 <!DOCTYPE html>
@@ -34,28 +43,75 @@ if ($_POST) {
 
     <section class="call-md-8 call-xs-12" "container">
       <div class="call.md-4 call-xs-12">
-
+        <ul style="color:red">
+          <?php
+            foreach ($validacionLogin as $error) {?>
+                <li><?php $validacion[$i] ?></li>
+          <?php }?>
+        </ul>
       <form class="register" action="register.php" method="post">
         <fieldset class="register">
           <legend>Registrate</legend>
           <p>
-            <input id="nombre" type="text" name="nombre" value=""placeholder="Nombre y apellido">
+            <?php if (isset($errores["nombre"])) :?>
+                  <input style="border: 1px solid red;" id="nombre" type="text" name="nombre" value= "" placeholder="Nombre y apellido">
+                  <p style="color:red; font-size:8px;"><?php $errores["nombre"] ?></p>
+            <?php else : ?>
+            <input id="nombre" type="text" name="nombre" value= "<?php $nombreDefault?>" >
+          <?php endif ?>
           </p>
           <p>
-            <input id="email" type="email" name="email" value=""placeholder="Ingrese su email aqui...">
+            <?php if (isset($errores["email"])) :?>
+                  <input style="border: 1px solid red;" id="email" type="email" name="email" value= "" placeholder="Ingrese su email aqui...">
+                  <p style="color:red; font-size:8px;"><?php $errores["email"] ?></p>
+            <?php else : ?>
+            <input id="email" type="email" name="email" value= "<?php $emailDefault?>" >
+          <?php endif ?>
           </p>
           <p>
-            <input id="edad" type="text" name="edad" value="" placeholder="Edad">
+            <?php if (isset($errores["fecha-nac"])) :?>
+                  <input style="border: 1px solid red;" id="fecha-nac" type="date" name="fecha-nac" value= "" placeholder="dd/mm/aaaa">
+                  <p style="color:red; font-size:8px;"><?php $errores["fecha-nac"] ?></p>
+            <?php else : ?>
+            <input id="fecha-nac" type="text" name="fecha-nac" value= "<?php $fechaNacDefault?>" >
+          <?php endif ?>
+          </p>
+          <p>
+            <?php if (isset($errores["nacionalidad"])) :?>
+                  <input style="border: 1px solid red;" id="nacionalidad" type="text" name="nacionalidad" value= "" placeholder="Ingrese su nacionalidad">
+                  <p style="color:red; font-size:8px;"><?php $errores["nacionbalidad"] ?></p>
+            <?php else : ?>
+            <input id="nacionalidad" type="text" name="nacionalidad" value= "<?php $nacionalidadDefault?>" >
+          <?php endif ?>
           </p>
           <p>
             <input id="pass" type="password" name="password" value=""placeholder="Contraseña">
           </p>
           <p>
-            <label for="Sexo">Sexo</label>
-
-            <input calss= "radio" type="radio" name="Sexo" value="">Hombre
-
-            <input calss= "radio" type="radio" name="Sexo" value="">Mujer
+            <input id="confPass" type="password" name="confPassword" value=""placeholder="confirmar Contraseña">
+          </p>
+          <p>
+          <select class="form-control" name="pregunta-seguridad">
+            <option value="null"class="hidden" selected disabled>Elegi una pregunta</option>
+            <option value="0">Nombre de tu primer mascota?</option>
+            <option value="1">Cual fue tu primer auto?</option>
+            <option value="2">Como se llamaba tu escuela primaria?</option>
+          </select>
+          <p>
+          <p>
+            <input id="respuesta" type="text" name="respuesta" value=""placeholder="Nombre y apellido">
+          </p>
+            <label >Genero</label>
+            <?php if(isset($_POST["genero"])&& $_POST["genero"]=="H"))?>
+            <input calss= "radio" type="radio" name="genero" value="H" checked>Hombre
+            <?php}else if{?>
+            <input calss= "radio" type="radio" name="genero" value="H"> Hombre
+          <?php } ?>
+          <?php if(isset($_POST["genero"] && $_POST["genero"]=="M"))?>
+          <input calss= "radio" type="radio" name="genero" value="M" checked>Mujer
+          <?php}else if{?>
+          <input calss= "radio" type="radio" name="genero" value="M">Mujer
+        <?php } ?>
           </p>
           <p class="button">
             <button type="submit" name="button">Enviar</button>
